@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ONG Exemplo — Missão, Projetos e Como Ajudar</title>
+  <meta name="description" content="Plataforma da ONG Exemplo: conheça a missão, projetos e como apoiar ou ser voluntário.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/images/logo.png" alt="Logo ONG Exemplo" class="logo">
+
+      <!-- botão do menu mobile -->
+      <button class="nav-toggle" aria-label="Abrir menu"
+        onclick="document.querySelector('.nav').classList.toggle('show')">
+        <span></span>
+      </button>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav">
+          <li><a href="index.html" data-link>Início</a></li>
+          <li><a href="projetos.html" data-link>Projetos</a></li>
+          <li><a href="cadastro.html" data-link>Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- aqui o JS vai injetar o conteúdo das páginas -->
+  <main id="app" class="container">
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano"></span> ONG Exemplo — Transparência e Impacto Social</p>
+    </div>
+  </footer>
+
+  <!-- ordem importa: templates → router → form → main -->
+  <script src="assets/js/templates.js"></script>
+  <script src="assets/js/router.js"></script>
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
