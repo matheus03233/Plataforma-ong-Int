@@ -5,33 +5,39 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ONG Exemplo — Missão, Projetos e Como Ajudar</title>
   <meta name="description" content="Plataforma da ONG Exemplo: conheça a missão, projetos e como apoiar ou ser voluntário.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
   <a class="skip-link" href="#app">Pular para o conteúdo</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <img src="assets/images/logo.png" alt="Logo ONG Exemplo" class="logo">
+  <div class="container header-inner">
+    <img src="assets/images/logo.png" alt="Logo ONG Exemplo" class="logo">
 
-      <!-- botão do menu mobile -->
-      <button class="nav-toggle" aria-label="Abrir menu"
-        onclick="document.querySelector('.nav').classList.toggle('show')">
-        <span></span>
-      </button>
+    <button class="nav-toggle" aria-label="Abrir menu"
+      onclick="document.querySelector('.nav').classList.toggle('show')">
+      <span></span>
+    </button>
 
-      <nav aria-label="Menu principal">
-        <ul class="nav">
-          <li><a href="index.html" data-link>Início</a></li>
-          <li><a href="projetos.html" data-link>Projetos</a></li>
-          <li><a href="cadastro.html" data-link>Cadastro</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <nav aria-label="Menu principal">
+      <ul class="nav">
+        <li><a href="index.html" data-link>Início</a></li>
+        <li><a href="projetos.html" data-link>Projetos</a></li>
+        <li><a href="cadastro.html" data-link>Cadastro</a></li>
+      </ul>
+    </nav>
 
-  <!-- aqui o JS vai injetar o conteúdo das páginas -->
-  <main id="app" class="container">
+    <button id="themeToggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Alternar modo claro/escuro"
+            aria-pressed="false">
+      🌓
+    </button>
+  </div>
+</header>
+
+ <main id="app" class="container">
   </main>
 
   <footer class="site-footer">
@@ -40,11 +46,12 @@
     </div>
   </footer>
 
-  <!-- ordem importa: templates → router → form → main -->
-  <script src="assets/js/templates.js"></script>
-  <script src="assets/js/router.js"></script>
-  <script src="assets/js/form.js"></script>
-  <script src="assets/js/main.js"></script>
+
+<script src="assets/js/main.min.js"></script>
+
+<script src="assets/js/templates.js"></script>
+<script src="assets/js/router.js"></script>
+<script src="assets/js/form.js"></script>
 
 </body>
 </html>
