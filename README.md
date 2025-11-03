@@ -14,7 +14,8 @@
 - Fluxo GitFlow implementado com branches: `main`, `develop`, `feature/*`.  
 - Commits semânticos seguindo convenção `feat`, `fix`, `refactor`, `docs`.  
 - Deploy automatizado via GitHub Pages:  
-  👉 [https://seuusuario.github.io/plataforma-ong-interativa/](https://seuusuario.github.io/plataforma-ong-interativa/)
+  👉
 - Última release: **v1.0.0 — Versão Final de Produção**
 
 ---
+
