@@ -9,5 +9,5 @@ Site para ONGs com **SPA em JavaScript**, **design system em CSS**, **modo escur
 - **Responsividade**: 5 breakpoints, menu mobile (hambúrguer)
 - **Acessibilidade**: semântica HTML, navegação por teclado, `skip-link`, contraste ≥ 4.5:1
 - **Dark Mode**: toggle com `body.dark-mode` (sem dependências)
-- **Otimização**: `style.min.css`, `main.min.js`, imagens comprimidas (TinyPNG)
+- **Otimização**: `style.min.css`, `main.min.js`
 - **Deploy**: GitHub Pages (branch `main`, pasta `/`)
