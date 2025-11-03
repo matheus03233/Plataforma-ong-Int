@@ -1,0 +1,351 @@
+/* assets/css/layout.css */
+
+/* HEADER / NAV */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+
+.logo {
+  height: 48px;
+}
+
+/* menu desktop */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  padding: .4rem .6rem;
+  border-radius: .4rem;
+  font-weight: 500;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  background: rgba(43,108,176,.12);
+}
+
+.nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* dropdown */
+.nav li {
+  position: relative;
+}
+
+.nav li ul {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  list-style: none;
+  padding: .5rem 0;
+  border-radius: .5rem;
+  box-shadow: var(--shadow-md);
+  min-width: 180px;
+  display: none;
+}
+
+.nav li:hover > ul,
+.nav li:focus-within > ul {
+  display: block;
+}
+
+/* ====== MENU MOBILE ====== */
+
+/* botão hambúrguer: escondido no desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #1f2937;
+  left: 0;
+  transition: 0.25s;
+}
+
+.nav-toggle span { top: 50%; transform: translateY(-50%); }
+.nav-toggle span::before { top: -9px; }
+.nav-toggle span::after { top: 9px; }
+
+/* mobile */
+@media (max-width: 720px) {
+  .header-inner {
+    gap: 1rem;
+  }
+
+  /* mostra o botão só no mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* esconde o menu por padrão no mobile */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;             /* altura do header */
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    width: min(240px, 90vw);
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 50;
+  }
+
+  .nav li {
+    list-style: none;
+  }
+
+  .nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .nav li:last-child a {
+    border-bottom: none;
+  }
+
+  /* quando clico no botão e ele coloca .show, o menu aparece */
+  .nav.show {
+    display: flex;
+  }
+}
+
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: var(--color-dark);
+  margin: 6px 0;
+  transition: .2s;
+}
+
+/* HERO (aproveita teu HTML) */
+.hero {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+  padding: var(--sp-3) var(--sp-2);
+  background: linear-gradient(90deg, #fff, #eef5ff);
+  border-radius: var(--radius-md);
+  margin-top: var(--sp-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: .5rem;
+}
+
+.hero .lead {
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.hero-media img {
+  max-width: 340px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* GRID 12 COLUNAS */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--sp-2);
+}
+
+/* exemplos de colunas */
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+/* ====== LAYOUT DOS PROJETOS (2 por linha / 1 no mobile) ====== */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.project {
+  flex: 1 1 calc(50% - 2rem); /* duas colunas no desktop */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.project img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: .75rem;
+}
+
+.project h3 {
+  margin: .5rem 0;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+.project p {
+  margin-bottom: .4rem;
+}
+
+/* FOOTER */
+.site-footer {
+  margin-top: var(--sp-4);
+  padding: var(--sp-2) 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+}
+
+/* BREAKPOINTS (5) */
+
+/* 1) super wide */
+@media (min-width: 1400px) {
+  .container { max-width: 1200px; }
+}
+
+/* 2) desktop médio */
+@media (max-width: 1200px) {
+  .grid-12 { gap: 1rem; }
+}
+
+/* 3) tablet grande */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-media img {
+    max-width: 100%;
+  }
+
+  /* nav mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 60px 0 0 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 1.5rem 2rem;
+    translate: 0 -120%;
+    transition: .2s;
+  }
+
+  .nav.show {
+    translate: 0;
+  }
+
+  .nav li ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  /* projetos: no tablet já vira 1 por linha */
+  .project {
+    flex: 1 1 100%;
+  }
+}
+
+/* 4) tablet pequeno */
+@media (max-width: 768px) {
+  .header-inner {
+    gap: 1rem;
+  }
+  /* como agora usamos flex, não precisamos mais do grid-template-columns aqui */
+}
+
+/* 5) celular menor */
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--sp-2);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .project img {
+    height: 160px;
+  }
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: rgba(56, 189, 248, 0.12);
+}
+
+body.dark-mode .theme-toggle {
+  border-color: rgba(248, 250, 252, 0.25);
+}
