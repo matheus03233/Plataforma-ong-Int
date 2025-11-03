@@ -1,6 +1,6 @@
 # Plataforma ONG — SPA (HTML/CSS/JS)
 
-Site estático para ONGs com **SPA em JavaScript**, **design system em CSS**, **modo escuro**, **acessibilidade (WCAG 2.1 AA)** e **deploy no GitHub Pages**.
+Site para ONGs com **SPA em JavaScript**, **design system em CSS**, **modo escuro**, **acessibilidade (WCAG 2.1 AA)** e **deploy no GitHub Pages**.
 
 ## Recursos
 - **SPA vanilla JS**: roteamento por hash (`#/`, `#/projetos`, `#/cadastro`)
@@ -11,5 +11,3 @@ Site estático para ONGs com **SPA em JavaScript**, **design system em CSS**, **
 - **Dark Mode**: toggle com `body.dark-mode` (sem dependências)
 - **Otimização**: `style.min.css`, `main.min.js`, imagens comprimidas (TinyPNG)
 - **Deploy**: GitHub Pages (branch `main`, pasta `/`)
-
-## Estrutura
